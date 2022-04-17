@@ -8,19 +8,25 @@ public class HashTableMain {
 
         //Split the words when a white space comes up.
         //Convert all the words in lowercase
-        String[] msgArray = message.toLowerCase().split(" ");
+        String[] msg = message.toLowerCase().split(" ");
 
-        for(String word: msgArray) {
-            //Search for the word in the linked list
+        for(String word: msg) {
+            //Search for the word in the hashtable
             Integer value =  hashImpl.get(word);
-            //If not found, frequency of the word StayWith 1
+          
             if( value == null)
                 value = 1;
             else
-                //If found, frequency of the word increases by 1
+               
                 value = value + 1;
             hashImpl.add(word , value);
+            System.out.println("Value = "+value);
         }
+        System.out.println(hashImpl);
+
+        
+        hashImpl.remove("avoidable");
+
         System.out.println(hashImpl);
     }
 }
